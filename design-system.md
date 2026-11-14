@@ -83,6 +83,28 @@ adjust if a real token set exists elsewhere):
 | Off-white surface | `#F5F6F1` | Card backgrounds on a white page (matches the light-theme carousel already built) |
 | Border | `#E1E3DA` | Hairlines / dividers on white |
 | Muted text | `#6B7080` | Captions, labels, secondary copy |
+| Green 700 (text-safe) | `#3B7A51` | Green **text** on white or off-white: eyebrows, links, small labels |
+
+### Contrast rules (WCAG AA)
+
+Brand Green `#5CA474` is a mid-tone. It works as a fill or a graphic,
+but it is too light to carry white text, and too light to be used as
+small text on white. Use these pairings:
+
+| Pairing | Ratio | Status | Use |
+|---|---|---|---|
+| Navy `#22293E` on White | 14.4:1 | Pass | Headlines, body copy |
+| White on Navy `#22293E` | 14.4:1 | Pass | Text on dark surfaces |
+| **Navy `#22293E` on Green `#5CA474`** | **4.8:1** | **Pass** | **CTA buttons (default)** |
+| Green 700 `#3B7A51` on White | 5.1:1 | Pass | Green text: eyebrows, links, labels |
+| Green 700 `#3B7A51` on Off-white `#F5F6F1` | 4.7:1 | Pass | Green text on cards |
+| Muted `#6B7080` on White | 4.9:1 | Pass | Captions, secondary copy |
+| White on Green `#5CA474` | 3.0:1 | **Fail** | Don't use for button or body text |
+| Green `#5CA474` on White (as text) | 3.0:1 | **Fail** | Only for text 24px+ bold, icons and graphics |
+| Blue `#6C91BF` on White (as text) | 3.3:1 | **Fail** | Graphics and accents only, never text |
+
+AA requires 4.5:1 for normal text and 3:1 for large text (24px+, or
+18.66px+ bold) and UI graphics.
 
 ## Typography
 
@@ -103,10 +125,12 @@ spec exists elsewhere.
   carousels built before these assets existed.
 - Header on every slide: the full mark (small, ~32–40px) + "PACIFIC IT
   SERVICES" wordmark in Navy, bold, uppercase, tracked out.
-- Primary accent for eyebrows, checkmarks, progress dots, CTA buttons:
-  **Green** `#5CA474`.
+- Primary accent for checkmarks, progress dots and CTA button fills:
+  **Green** `#5CA474`. When the accent is small text (eyebrows, links,
+  labels), use **Green 700** `#3B7A51` so it stays readable.
 - Reserve **Red** and **Blue** for small highlighted details only (a
   single callout, a per-item accent in a comparison slide) — never as
   the dominant color of a slide.
-- CTA buttons: Green fill, white text (test contrast; navy text is the
-  fallback if green reads too light).
+- CTA buttons: **Green `#5CA474` fill with Navy `#22293E` text**
+  (4.8:1, passes AA). Don't use white text on green (3.0:1, fails).
+  Secondary option: Navy fill with white text (14.4:1).
